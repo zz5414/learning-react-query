@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useQuery, QueryClient } from "react-query";
+import { useQuery, useQueryClient } from "react-query";
 
 import { PostDetail } from "./PostDetail";
 const maxPostPage = 10;
@@ -15,7 +15,7 @@ export function Posts() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedPost, setSelectedPost] = useState(null);
 
-  const queryClient = new QueryClient();
+  const queryClient = useQueryClient();
 
   useEffect(() => {
     const nextPage = currentPage + 1;
